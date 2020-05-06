@@ -38,8 +38,8 @@ void main()
 	bitmap_drawLine(bitmap_file_ptr, &line_color, 30, 20, 300, 100); // JFRs Line
 	bitmap_drawLine(bitmap_file_ptr, &line_color, 100, 0, 100, 1000); // vertica line
 	bitmap_drawLine(bitmap_file_ptr, &line_color, 0, 100, 1000, 100); // horizontal line
-	bitmap_drawLine(bitmap_file_ptr, &line_color, 0, 0, bitmap_width(bitmap_file_ptr), bitmap_height(bitmap_file_ptr)); // diagonal top left to bottom right
-	bitmap_drawLine(bitmap_file_ptr, &line_color, bitmap_width(bitmap_file_ptr), 0, 0, bitmap_height(bitmap_file_ptr)); // diagonal top right to bottom left
+	bitmap_drawLine(bitmap_file_ptr, &line_color, 0, 0, bitmap_getWidth(bitmap_file_ptr), bitmap_getHeight(bitmap_file_ptr)); // diagonal top left to bottom right
+	bitmap_drawLine(bitmap_file_ptr, &line_color, bitmap_getWidth(bitmap_file_ptr), 0, 0, bitmap_getHeight(bitmap_file_ptr)); // diagonal top right to bottom left
 	bitmap_drawRect(bitmap_file_ptr, &rectangle_blue, 100, 100, 400, 400, false); // rectangle top left no fill
 	bitmap_drawRect(bitmap_file_ptr, &rectangle_blue, 400, 400, 700, 700, true); // rectangle directly bottom right of the previous one with fill
 	bitmap_drawCircle(bitmap_file_ptr, &circle_red, 700, 700, 100, false); // empty circle at 800,800 with radius 100

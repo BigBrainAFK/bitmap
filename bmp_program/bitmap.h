@@ -54,5 +54,5 @@ void bitmap_drawPixel(const bitmap* bitmap_file_prt, const color* line_color_ptr
 void bitmap_fillImage(const bitmap* bitmap_file_prt, const color* color_ptr);
 
 size_t bitmap_linePitch(const bitmap* bitmap_file_prt);
-int32_t bitmap_height(const bitmap* bitmap_file_ptr);
-int32_t bitmap_width(const bitmap* bitmap_file_ptr);
+int32_t bitmap_getHeight(const bitmap* bitmap_file_ptr);
+int32_t bitmap_getWidth(const bitmap* bitmap_file_ptr);

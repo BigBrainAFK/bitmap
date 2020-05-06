@@ -48,7 +48,7 @@ bitmap bitmap_newBitmap(int32_t width, int32_t height) {
 	};
 
 	//calculate size of image data
-	bitmap_file.dib_header.size_image = (uint32_t)(bitmap_linePitch(&bitmap_file) * abs(bitmap_file.dib_header.height));
+	bitmap_file.dib_header.size_image = (uint32_t)(bitmap_linePitch(&bitmap_file) * bitmap_getHeight(&bitmap_file));
 	bitmap_file.header.file_size = sizeof(header) + sizeof(dib_header) + dib_header.size_image;
 
 	//allocate memory for image data
@@ -227,11 +227,11 @@ size_t bitmap_linePitch(const bitmap* bitmap_file_ptr) {
 	return alignUp(pitch, 4);
 }
 
-int32_t bitmap_height(const bitmap* bitmap_file_ptr) {
+int32_t bitmap_getHeight(const bitmap* bitmap_file_ptr) {
 	return abs(bitmap_file_ptr->dib_header.height);
 }
 
-int32_t bitmap_width(const bitmap* bitmap_file_ptr) {
+int32_t bitmap_getWidth(const bitmap* bitmap_file_ptr) {
 	return abs(bitmap_file_ptr->dib_header.width);
 }
 
